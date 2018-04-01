@@ -9,7 +9,7 @@
 @section('content')
 {{ html()->modelForm($hospital, 'PATCH', route('admin.hospital.update', $hospital->id))->class('form-horizontal')->open() }}
 
-@include('backend.auth.hospital._form')
+@include('backend.hospital._form')
 
 <div class="card-footer">
     <div class="row">

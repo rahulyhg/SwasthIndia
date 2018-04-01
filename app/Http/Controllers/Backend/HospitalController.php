@@ -34,7 +34,7 @@ class HospitalController extends Controller
      */
     public function index(ManageHospitalRequest $request)
     {
-        return view('backend.auth.hospital.index')
+        return view('backend.hospital.index')
             ->withHospitals($this->hospitalRepository->getActivePaginated(25, 'id', 'asc'));
     }
 
@@ -45,7 +45,7 @@ class HospitalController extends Controller
      */
     public function create(ManageHospitalRequest $request)
     {
-        return view('backend.auth.hospital.create');
+        return view('backend.hospital.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class HospitalController extends Controller
      */
     public function show(Hospital $hospital, ManageHospitalRequest $request)
     {
-        return view('backend.auth.hospital.show')
+        return view('backend.hospital.show')
             ->withHospital($hospital);
     }
 
@@ -87,7 +87,7 @@ class HospitalController extends Controller
      */
     public function edit(Hospital $hospital, ManageHospitalRequest $request)
     {
-        return view('backend.auth.hospital.edit')
+        return view('backend.hospital.edit')
             ->withHospital($hospital);
     }
 
