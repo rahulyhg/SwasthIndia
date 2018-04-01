@@ -159,6 +159,9 @@ return [
                     'language'                => 'Language',
                 ],
 
+                'disease' => [
+                    'name'  => 'Disease Name',
+                    'type'  => 'Type',
                 'hospitals' => [
                     'active'                  => 'Active',
                     'name'                    => 'Hospital Name',
@@ -186,4 +189,5 @@ return [
             'language'                  => 'Language',
         ],
     ],
+]
 ];

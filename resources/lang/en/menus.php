@@ -50,6 +50,7 @@ return [
             'dashboard' => 'Dashboard',
             'general'   => 'General',
             'system'    => 'System',
+            'disease'    => 'Disease',
             'hospital'  => 'Hospital'
         ],
     ],
