@@ -5,3 +5,5 @@
  */
 Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('hospital/status/{id}', 'HospitalController@status')->name('hospital.status');
+Route::resource('hospital', 'HospitalController');

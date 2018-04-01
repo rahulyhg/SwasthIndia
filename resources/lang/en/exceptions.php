@@ -51,6 +51,11 @@ return [
                 'update_error'          => 'There was a problem updating this user. Please try again.',
                 'update_password_error' => 'There was a problem changing this users password. Please try again.',
             ],
+
+            'hospitals' => [
+                'create_error'          => 'There was a problem creating this hospital. Please try again.',
+                'update_error'          => 'There was a problem updating this hospital. Please try again.',
+            ],
         ],
     ],
 

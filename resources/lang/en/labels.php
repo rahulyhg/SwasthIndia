@@ -47,7 +47,42 @@ return [
                     'total'           => 'role total|roles total',
                 ],
             ],
+            'hospitals' => [
+                'active' => 'Active Hospitals',
+                'management' => 'Hospital Management',
+                'create' => 'Create Hospital',
+                'edit' => 'Edit Hospital',
+                'view' => 'View Hospital',
+                
+                'table' => [
+                    'name' => 'Hospital Name',
+                    'city' => 'City',
+                    'state' => 'State',
+                    'address' => 'Address',
+                    'active' => 'Active',
+                    'created_at' => 'Created',
+                    'updated_at' => 'Updated',
+                    'total' => 'hospital total|hospitals total',
+                ],
+                
+                'tabs' => [
+                    'titles' => [
+                        'overview' => 'Overview'
+                    ],
 
+                    'content' => [
+                        'overview' => [
+                            'name'       => 'Name',
+                            'city'       => 'City',
+                            'state'       => 'State',
+                            'address'       => 'Address',
+                            'status'       => 'Status',
+                            'created_at'       => 'Created At',
+                            'last_updated_at'  => 'Updated At',
+                        ],
+                    ],
+                ],
+            ],
             'users' => [
                 'active'              => 'Active Users',
                 'all_permissions'     => 'All Permissions',
