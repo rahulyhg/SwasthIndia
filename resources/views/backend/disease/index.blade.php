@@ -38,7 +38,7 @@
                         @foreach ($diseases as $disease)
                             <tr>
                                 <td>{{ $disease->name }}</td>
-                                <td>{{ $disease->type }}</td>
+                                <td>{{ isset(config('params.diseaseType')[$disease->type]) ? config('params.diseaseType')[$disease->type] : '' }}</td>
                                 <td>{{ $disease->created_at }}</td>
                                 <td>{{ $disease->updated_at }}</td>
                                 <td>{!! $disease->edit_button !!}</td>

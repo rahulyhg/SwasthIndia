@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\ManageDiseaseRequest;
+use App\Http\Requests\Backend\UpdateDiseaseRequest;
 use App\Repositories\Backend\DiseaseRepository;
 use App\Models\Disease;
 use App\Http\Requests\Backend\StoreDiseaseRequest;
@@ -87,6 +88,34 @@ class DiseaseController extends Controller
         $this->diseaseRepository->deleteById($disease->id);
 
         return redirect()->route('admin.auth.disease.deleted')->withFlashSuccess(__('alerts.backend.users.deleted'));
+    }
+
+    /**
+     * @param Disease              $disease
+     * @param ManageDiseaseRequest $request
+     *
+     * @return mixed
+     */
+    public function edit(Disease $disease, ManageDiseaseRequest $request)
+    {
+        
+        return view('backend.disease.edit')
+            ->withDisease($disease);
+    }
+     /**
+     * @param Disease              $disease
+     * @param UpdateDiseaseRequest $request
+     *
+     * @return mixed
+     */
+    public function update(Disease $disease, UpdateDiseaseRequest $request)
+    {
+        $this->diseaseRepository->update($disease, $request->only(
+            'name',
+            'type'
+        ));
+
+        return redirect()->route('admin.disease.index')->withFlashSuccess(__('alerts.backend.disease.updated'));
     }
 
 }
