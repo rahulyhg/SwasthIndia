@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.access.users.management') . ' | ' . __('labels.backend.access.users.view'))
+@section ('title', __('labels.backend.access.hospitals.management') . ' | ' . __('labels.backend.access.hospitals.view'))
 
 @section('breadcrumb-links')
     @include('backend.auth.user.includes.breadcrumb-links')
@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-sm-5">
                 <h4 class="card-title mb-0">
-                    {{ __('labels.backend.access.users.management') }}
-                    <small class="text-muted">{{ __('labels.backend.access.users.view') }}</small>
+                    {{ __('labels.backend.access.hospitals.management') }}
+                    <small class="text-muted">{{ __('labels.backend.access.hospitals.view') }}</small>
                 </h4>
             </div><!--col-->
         </div><!--row-->
@@ -28,7 +28,7 @@
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="overview" role="tabpanel" aria-expanded="true">
-                        @include('backend.auth.user.show.tabs.overview')
+                        @include('backend.auth.hospital.show.tabs.overview')
                     </div><!--tab-->
                 </div><!--tab-content-->
             </div><!--col-->
@@ -39,11 +39,8 @@
         <div class="row">
             <div class="col">
                 <small class="float-right text-muted">
-                    <strong>{{ __('labels.backend.access.users.tabs.content.overview.created_at') }}:</strong> {{ $user->updated_at->timezone(get_user_timezone()) }} ({{ $user->created_at->diffForHumans() }}),
-                    <strong>{{ __('labels.backend.access.users.tabs.content.overview.last_updated') }}:</strong> {{ $user->created_at->timezone(get_user_timezone()) }} ({{ $user->updated_at->diffForHumans() }})
-                    @if ($user->trashed())
-                        <strong>{{ __('labels.backend.access.users.tabs.content.overview.deleted_at') }}:</strong> {{ $user->deleted_at->timezone(get_user_timezone()) }} ({{ $user->deleted_at->diffForHumans() }})
-                    @endif
+                    <strong>{{ __('labels.backend.access.hospitals.tabs.content.overview.created_at') }}:</strong> {{ $hospital->created_at }},
+                    <strong>{{ __('labels.backend.access.hospitals.tabs.content.overview.last_updated_at') }}:</strong> {{ $hospital->updated_at }}
                 </small>
             </div><!--col-->
         </div><!--row-->

@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-@section ('title', app_name() . ' | ' . __('labels.backend.access.users.management'))
+@section ('title', app_name() . ' | ' . __('labels.backend.access.hospitals.management'))
 
 @section('breadcrumb-links')
     @include('backend.auth.user.includes.breadcrumb-links')
@@ -43,7 +43,7 @@
                                 <td>{{ $hospital->city }}</td>
                                 <td>{{ $hospital->state }}</td>
                                 <td>{{ $hospital->address }}</td>
-                                <td>{{ ($hospital->active) ? 'Yes' : 'No' }}</td>
+                                <td>{!! ($hospital->active) ? '<span class="badge badge-success">'.__('labels.general.yes').'</span>' : '<span class="badge badge-danger">'.__('labels.general.no').'</span>' !!}</td>
                                 <td>{{ $hospital->updated_at }}</td>
                                 <td>{!! $hospital->action_buttons !!}</td>
                             </tr>

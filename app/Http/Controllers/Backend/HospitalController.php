@@ -7,6 +7,8 @@ use App\Models\Auth\Hospital;
 use App\Repositories\Backend\Auth\HospitalRepository;
 use App\Http\Requests\Backend\Auth\Hospital\ManageHospitalRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\Auth\Hosptial\StoreHospitalRequest;
+use App\Http\Requests\Backend\Auth\Hosptial\UpdateHospitalRequest;
 
 class HospitalController extends Controller
 {
@@ -41,9 +43,9 @@ class HospitalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(ManageHospitalRequest $request)
     {
-        //
+        return view('backend.auth.hospital.create');
     }
 
     /**
@@ -52,9 +54,17 @@ class HospitalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreHospitalRequest $request)
     {
-        //
+        $this->hospitalRepository->create($request->only(
+            'name',
+            'city',
+            'state',
+            'address',
+            'active'
+        ));
+
+        return redirect()->route('admin.hospital.index')->withFlashSuccess(__('alerts.backend.hospitals.created'));
     }
 
     /**
@@ -63,9 +73,10 @@ class HospitalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Hospital $hospital, ManageHospitalRequest $request)
     {
-        //
+        return view('backend.auth.hospital.show')
+            ->withHospital($hospital);
     }
 
     /**
@@ -74,9 +85,10 @@ class HospitalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Hospital $hospital, ManageHospitalRequest $request)
     {
-        //
+        return view('backend.auth.hospital.edit')
+            ->withHospital($hospital);
     }
 
     /**
@@ -86,9 +98,17 @@ class HospitalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Hospital $hospital, UpdateHospitalRequest $request)
     {
-        //
+        $this->hospitalRepository->update($hospital, $request->only(
+            'name',
+            'city',
+            'state',
+            'address',
+            'active'
+        ));
+
+        return redirect()->route('admin.hospital.index')->withFlashSuccess(__('alerts.backend.hospitals.updated'));
     }
 
     /**
@@ -97,8 +117,21 @@ class HospitalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        
+    }
+    
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function status($id)
+    {  
+        $this->hospitalRepository->toggleStatus($id);
+
+        return redirect()->route('admin.hospital.index')->withFlashSuccess(__('alerts.backend.hospitals.toggled'));
     }
 }

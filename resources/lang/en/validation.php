@@ -158,6 +158,14 @@ return [
                     'timezone'                => 'Timezone',
                     'language'                => 'Language',
                 ],
+
+                'hospitals' => [
+                    'active'                  => 'Active',
+                    'name'                    => 'Hospital Name',
+                    'city'                    => 'City',
+                    'state'                   => 'State',
+                    'address'                 => 'Address',
+                ],
             ],
         ],
 

@@ -19,6 +19,12 @@ return [
             'deleted' => 'The role was successfully deleted.',
             'updated' => 'The role was successfully updated.',
         ],
+        
+        'hospitals' => [
+            'created' => 'The hospital was successfully created.',
+            'deleted' => 'The hospital was successfully deleted.',
+            'updated' => 'The hospital was successfully updated.',
+        ],
 
         'users' => [
             'cant_resend_confirmation' => 'The application is currently set to manually approve users.',

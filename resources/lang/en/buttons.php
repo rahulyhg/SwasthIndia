@@ -48,6 +48,8 @@ return [
             'edit'   => 'Edit',
             'update' => 'Update',
             'view'   => 'View',
+            'active'   => 'Active',
+            'inactive'   => 'Inactive',
         ],
 
         'save' => 'Save',
