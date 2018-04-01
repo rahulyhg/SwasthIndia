@@ -24,6 +24,7 @@ return [
             'created' => 'The hospital was successfully created.',
             'deleted' => 'The hospital was successfully deleted.',
             'updated' => 'The hospital was successfully updated.',
+            'toggled' => 'The hospital status was successfully updated.',
         ],
 
         'users' => [
