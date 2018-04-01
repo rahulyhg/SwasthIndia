@@ -47,7 +47,21 @@ return [
                     'total'           => 'role total|roles total',
                 ],
             ],
-
+            'hospitals' => [
+                'active' => 'Active Hospitals',
+                'management' => 'Hospital Management',
+                'create'              => 'Create Hospital',
+                'table' => [
+                    'name' => 'Hospital Name',
+                    'city' => 'City',
+                    'state' => 'State',
+                    'address' => 'Address',
+                    'active' => 'Active',
+                    'created_at' => 'Created',
+                    'updated_at' => 'Updated',
+                    'total' => 'hospital total|hospitals total',
+                ]
+            ],
             'users' => [
                 'active'              => 'Active Users',
                 'all_permissions'     => 'All Permissions',
