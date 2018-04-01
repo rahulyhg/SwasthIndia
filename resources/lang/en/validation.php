@@ -158,6 +158,11 @@ return [
                     'timezone'                => 'Timezone',
                     'language'                => 'Language',
                 ],
+
+                'disease' => [
+                    'name'  => 'Disease Name',
+                    'type'  => 'Type',
+                ],
             ],
         ],
 

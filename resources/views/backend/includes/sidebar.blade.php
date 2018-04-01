@@ -60,6 +60,11 @@
                     </li>
                 </ul>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/disease')) }}" href="{{ route('admin.disease.index') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.disease') }}</a>
+            </li>
+
         </ul>
     </nav>
 </div><!--sidebar-->

@@ -34,6 +34,10 @@ return [
             'updated'             => 'The user was successfully updated.',
             'updated_password'    => "The user's password was successfully updated.",
         ],
+        'disease' => [
+            'created'             => 'Disease was successfully created.',
+            'updated'             => 'Disease was successfully updated.'
+        ],
     ],
 
     'frontend' => [

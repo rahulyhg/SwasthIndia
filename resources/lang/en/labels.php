@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 return [
 
@@ -98,6 +98,42 @@ return [
                             'first_name'   => 'First Name',
                             'last_name'    => 'Last Name',
                             'status'       => 'Status',
+                        ],
+                    ],
+                ],
+
+                'view' => 'View User',
+            ],
+            'disease' => [
+                'active'              => 'Active Disease',
+                'create'              => 'Create Disease',
+                'deactivated'         => 'Deactivated Disease',
+                'deleted'             => 'Deleted Disease',
+                'edit'                => 'Edit Disease',
+                'management'          => 'Disease Management',
+                
+                'table' => [
+                    'name' => 'Disease Name',
+                    'type' => 'Type',
+                    'created_at' => 'Created At',
+                    'updated_at' => 'Updated At',
+                    'permissions' => 'Permissions',
+                    'social' => 'Social',
+                    'total'          => 'disease total|disease total',
+                ],
+
+                'tabs' => [
+                    'titles' => [
+                        'overview' => 'Overview',
+                        'history'  => 'History',
+                    ],
+
+                    'content' => [
+                        'overview' => [
+                            'type'    => 'Type',
+                            'created_at'   => 'Created At',
+                            'deleted_at'   => 'Deleted At',
+                            'name'         => 'Name',
                         ],
                     ],
                 ],
