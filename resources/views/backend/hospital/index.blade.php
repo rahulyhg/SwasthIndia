@@ -17,7 +17,7 @@
             </div><!--col-->
 
             <div class="col-sm-7">
-                @include('backend.auth.hospital.includes.header-buttons')
+                @include('backend.hospital.includes.header-buttons')
             </div><!--col-->
         </div><!--row-->
 

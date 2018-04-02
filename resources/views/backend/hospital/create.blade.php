@@ -9,7 +9,7 @@
 @section('content')
 {{ html()->form('POST', route('admin.hospital.store'))->class('form-horizontal')->open() }}
 
-@include('backend.auth.hospital._form')
+@include('backend.hospital._form')
 
 <div class="card-footer clearfix">
     <div class="row">
