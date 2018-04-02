@@ -18,8 +18,8 @@ class CreatePrescriptionDocumentsTable extends Migration {
 			$table->integer('prescription_id')->unsigned()->nullable()->index('fk_prescription_documents');
 			$table->text('document', 65535)->nullable();
 			$table->text('type', 65535)->nullable();
-			$table->dateTime('created_at')->nullable();
 			$table->boolean('is_active')->nullable()->default(1);
+                        $table->timestamps();
 		});
 	}
 

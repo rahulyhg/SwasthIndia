@@ -12,10 +12,10 @@ class CreateTestRecordDucumentsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('test_record_ducuments', function(Blueprint $table)
+		Schema::create('test_record_documents', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('test_record_id')->unsigned()->index('fk_test_record_ducuments');
+			$table->integer('test_record_id')->unsigned()->index('fk_test_record_documents');
 			$table->text('document', 65535)->nullable();
 			$table->string('type', 100)->nullable();
 			$table->timestamps();
@@ -30,7 +30,7 @@ class CreateTestRecordDucumentsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('test_record_ducuments');
+		Schema::drop('test_record_documents');
 	}
 
 }

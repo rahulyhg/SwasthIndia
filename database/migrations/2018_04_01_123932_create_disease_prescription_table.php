@@ -17,6 +17,7 @@ class CreateDiseasePrescriptionTable extends Migration {
 			$table->increments('id');
 			$table->integer('disease_id')->unsigned()->index('fk_disease_prescription');
 			$table->integer('prescription_id')->unsigned()->index('fk_disease_prescriptions');
+            $table->timestamps();
 		});
 	}
 

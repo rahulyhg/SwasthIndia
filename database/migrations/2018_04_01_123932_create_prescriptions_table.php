@@ -23,7 +23,7 @@ class CreatePrescriptionsTable extends Migration {
 			$table->text('description', 65535)->nullable();
 			$table->dateTime('prescripted_at')->nullable();
 			$table->boolean('is_active')->default(1);
-			$table->primary(['id','patient_id']);
+                        $table->timestamps();
 		});
 	}
 

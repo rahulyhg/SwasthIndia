@@ -17,6 +17,7 @@ class CreateTreatmentsTable extends Migration {
 			$table->increments('id');
 			$table->string('name')->nullable();
 			$table->integer('patient_id')->unsigned()->nullable()->index('fk_treatments');
+                        $table->timestamps();
 		});
 	}
 

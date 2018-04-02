@@ -12,9 +12,9 @@ class AddForeignKeysToTestRecordDucumentsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('test_record_ducuments', function(Blueprint $table)
+		Schema::table('test_record_documents', function(Blueprint $table)
 		{
-			$table->foreign('test_record_id', 'fk_test_record_ducuments')->references('id')->on('test_records')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('test_record_id', 'fk_test_record_documents')->references('id')->on('test_records')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 
@@ -26,9 +26,9 @@ class AddForeignKeysToTestRecordDucumentsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('test_record_ducuments', function(Blueprint $table)
+		Schema::table('test_record_documents', function(Blueprint $table)
 		{
-			$table->dropForeign('fk_test_record_ducuments');
+			$table->dropForeign('fk_test_record_documents');
 		});
 	}
 

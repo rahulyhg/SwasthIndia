@@ -16,7 +16,7 @@ class CreateTestsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
-			$table->dateTime('created_at')->nullable();
+                        $table->timestamps();
 		});
 	}
 
