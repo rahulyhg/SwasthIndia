@@ -187,7 +187,7 @@
     });
     
     $(document).ready(function() {
-    $('#diseases').select2();
+    $('select').select2({tags: true});
 });
     
     </script>
