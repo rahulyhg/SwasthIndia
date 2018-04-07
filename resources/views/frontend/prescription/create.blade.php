@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header">
                 <strong>
-                    <i class="fa fa-dashboard"></i> {{ __('navs.frontend.prescription') }}
+                    <i class="fa fa-stethoscope"></i> {{ __('navs.frontend.prescription') }}
                 </strong>
             </div><!--card-header-->
 
@@ -130,7 +130,7 @@
                             <div class="card-footer clearfix">
                                 <div class="row">
                                     <div class="col">
-                                        {{ form_cancel(route('admin.hospital.index'), __('buttons.general.cancel')) }}
+                                        {{ form_cancel(url('/dashboard'), __('buttons.general.cancel')) }}
                                     </div><!--col-->
 
                                     <div class="col text-right">

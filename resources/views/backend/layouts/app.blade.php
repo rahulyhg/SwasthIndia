@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', app_name())</title>
-    <meta name="description" content="@yield('meta_description', 'Laravel 5 Boilerplate')">
+    <meta name="description" content="@yield('meta_description', 'Swasth India')">
     <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
     @yield('meta')
 
@@ -19,7 +19,7 @@
     <!-- Check if the language is set to RTL, so apply the RTL layouts -->
     <!-- Otherwise apply the normal LTR layouts -->
     {{ style(mix('css/backend.css')) }}
-
+    
     @stack('after-styles')
 </head>
 

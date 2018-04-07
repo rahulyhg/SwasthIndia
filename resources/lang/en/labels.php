@@ -78,7 +78,7 @@ return [
                 ],
             ],
             'prescriptions' => [
-                'management' => 'Prescription Management',
+                'management' => 'Prescription',
                 'edit' => 'Edit Prescription',
                 'create' => 'Create Prescription',
             ],
