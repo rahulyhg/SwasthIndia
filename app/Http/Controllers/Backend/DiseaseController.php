@@ -15,15 +15,15 @@ use App\Http\Requests\Backend\StoreDiseaseRequest;
  */
 class DiseaseController extends Controller
 {
-        /**
-     * @var UserRepository
+    /**
+     * @var DiseaseRepository
      */
     protected $diseaseRepository;
 
     /**
-     * UserController constructor.
+     * DiseaseController constructor.
      *
-     * @param UserRepository $userRepository
+     * @param DiseaseRepository $diseaseRepository
      */
     public function __construct(DiseaseRepository $diseaseRepository)
     {

@@ -13,7 +13,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="card-body">
-                        {{ html()->form('POST', '')->class('form-horizontal')->open() }}
+                        {{ html()->form('POST', url('user-prescription-save'))->class('form-horizontal')->open() }}
 
                         <div class="card">
                             <div class="card-body">
@@ -37,8 +37,7 @@
                                                 {{ html()->select('doctor')
                                     ->class('form-control')
                                     ->placeholder(__('validation.attributes.backend.access.prescriptions.doctor'))
-                                    ->attribute('maxlength', 191)
-                                    ->required() }}
+                                    ->attribute('maxlength', 191) }}
                                             </div><!--col-->
                                         </div><!--form-group-->
                                         
