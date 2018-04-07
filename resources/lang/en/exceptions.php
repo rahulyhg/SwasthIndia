@@ -57,6 +57,9 @@ return [
                 'update_error'          => 'There was a problem updating this hospital. Please try again.',
             ],
         ],
+        'doctor' => [
+            'approved' => 'This user hasn\'t applied to become a doctor',
+        ]
     ],
 
     'frontend' => [
@@ -73,6 +76,9 @@ return [
                 'success'           => 'Your account has been successfully confirmed!',
                 'resent'            => 'A new confirmation e-mail has been sent to the address on file.',
             ],
+            
+            'already-doctor' => 'You have already applied for a doctor. If you are not approved yet, please wait for your approval or you can reach us out at :email',
+            'unauthorized'   => 'You are unauthorized to access this module',
 
             'deactivated' => 'Your account has been deactivated.',
             'email_taken' => 'That e-mail address is already taken.',

@@ -19,6 +19,8 @@ Route::get('user-prescription', 'Prescription\PrescriptionController@create')->n
  */
 Route::group(['middleware' => ['auth', 'password_expires']], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
+        Route::post('doctor', 'DoctorController@register')->name('doctor.register');
+        Route::get('register/doctor', 'DoctorController@create')->name('doctor.register.get');
         /*
          * User Dashboard Specific
          */

@@ -41,6 +41,9 @@ return [
             'updated'             => 'The user was successfully updated.',
             'updated_password'    => "The user's password was successfully updated.",
         ],
+        'doctor' => [
+            'approved' => 'Doctor approved successfully',
+        ],
         'disease' => [
             'created'             => 'Disease was successfully created.',
             'updated'             => 'Disease was successfully updated.'
@@ -51,5 +54,8 @@ return [
         'contact' => [
             'sent' => 'Your information was successfully sent. We will respond back to the e-mail provided as soon as we can.',
         ],
+        'user' => [
+            'register-doctor' => 'We have sent your request to the admin. You will get an update once you are verified as a doctor.'
+        ]
     ],
 ];

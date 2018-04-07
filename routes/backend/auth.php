@@ -15,7 +15,7 @@ Route::group([
          * User Management
          */
         Route::group(['namespace' => 'User'], function () {
-
+            Route::get('doctor/{user}/approved', 'UserController@approve')->name('doctor.approved');
             /*
              * User Status'
              */

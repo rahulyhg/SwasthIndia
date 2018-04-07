@@ -144,4 +144,13 @@ class UserController extends Controller
 
         return redirect()->route('admin.auth.user.deleted')->withFlashSuccess(__('alerts.backend.users.deleted'));
     }
+    
+    public function approve(User $user)
+    {
+        $request = $this->userRepository->approveDoctor($user);
+        if (!$request) {
+            return redirect()->route('admin.dashboard')->withFlashDanger(trans('exceptions.backend.doctor.approved'));
+        }
+        return redirect()->route('admin.dashboard')->withFlashSuccess(trans('alert.backend.doctor.approved'));
+    }
 }
