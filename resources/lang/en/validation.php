@@ -164,6 +164,7 @@ return [
         'frontend' => [
             'avatar'                    => 'Avatar Location',
             'email'                     => 'E-mail Address',
+            'aadhar_no'                 => 'Aadhar Card Number',
             'first_name'                => 'First Name',
             'last_name'                 => 'Last Name',
             'name'                      => 'Full Name',
@@ -176,6 +177,10 @@ return [
             'old_password'              => 'Old Password',
             'timezone'                  => 'Timezone',
             'language'                  => 'Language',
+            'degree'                    => 'Degree',
+            'specialisation'            => 'Specialisation',
+            'surgeon'                   => 'Surgeon',
+            'upload-documents'          => 'Upload Documents'
         ],
     ],
 ];

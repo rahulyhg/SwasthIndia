@@ -31,6 +31,8 @@ return [
             'change_password' => 'Change Password',
             'my_information'  => 'My Information',
             'profile'         => 'Profile',
+            'doctor'          => 'Register a Doctor',
+            'doctor-details'  => 'Doctor Details',
         ],
     ],
 ];

@@ -22,7 +22,9 @@
                                     {{ html()->text('first_name')
                                         ->class('form-control')
                                         ->placeholder(__('validation.attributes.frontend.first_name'))
-                                        ->attribute('maxlength', 191) }}
+                                        ->attribute('maxlength', 191)
+                                        ->required()
+                                    }}
                                 </div><!--col-->
                             </div><!--row-->
 
@@ -33,7 +35,9 @@
                                     {{ html()->text('last_name')
                                         ->class('form-control')
                                         ->placeholder(__('validation.attributes.frontend.last_name'))
-                                        ->attribute('maxlength', 191) }}
+                                        ->attribute('maxlength', 191)
+                                        ->required()
+                                    }}
                                 </div><!--form-group-->
                             </div><!--col-->
                         </div><!--row-->
@@ -47,6 +51,34 @@
                                         ->class('form-control')
                                         ->placeholder(__('validation.attributes.frontend.email'))
                                         ->attribute('maxlength', 191)
+                                    }}
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    {{ html()->label(__('validation.attributes.frontend.aadhar_no'))->for('aadhar_no') }}
+
+                                    {{ html()->text('aadhar_no')
+                                        ->class('form-control')
+                                        ->placeholder(__('validation.attributes.frontend.aadhar_no'))
+                                        ->attribute('maxlength', 16)
+                                        ->required() }}
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    {{ html()->label(__('validation.attributes.frontend.phone'))->for('phone') }}
+
+                                    {{ html()->text('phone')
+                                        ->class('form-control')
+                                        ->placeholder(__('validation.attributes.frontend.phone'))
+                                        ->attribute('maxlength', 10)
                                         ->required() }}
                                 </div><!--form-group-->
                             </div><!--col-->

@@ -71,6 +71,7 @@ return [
                     'name'           => 'Name',
                     'first_name'     => 'First Name',
                     'last_name'      => 'Last Name',
+                    'last_name'      => 'Last Name',
                     'no_deactivated' => 'No Deactivated Users',
                     'no_deleted'     => 'No Deleted Users',
                     'other_permissions' => 'Other Permissions',
@@ -136,19 +137,33 @@ return [
             'passwords' => [
                 'change' => 'Change Password',
             ],
+            'button' => [
+                'update_details' => 'Update Details'
+            ],
 
             'profile' => [
                 'avatar'             => 'Avatar',
                 'created_at'         => 'Created At',
                 'edit_information'   => 'Edit Information',
                 'email'              => 'E-mail',
+                'aadhar_no'          => 'Aadhar Card Number',
+                'phone'              => 'Phone Number',
                 'last_updated'       => 'Last Updated',
                 'name'               => 'Name',
                 'first_name'         => 'First Name',
                 'last_name'          => 'Last Name',
                 'update_information' => 'Update Information',
             ],
+            'doctor' => [
+                'degree' => 'Degree',
+                'specialisation' => 'Specilaisation',
+                'surgeon' => 'Surgeon'
+            ]
         ],
 
     ],
+    'common' => [
+        'yes' => 'Yes',
+        'no'  => 'No',
+    ]
 ];

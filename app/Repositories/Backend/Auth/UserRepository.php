@@ -19,6 +19,7 @@ use App\Events\Backend\Auth\User\UserPasswordChanged;
 use App\Notifications\Backend\Auth\UserAccountActive;
 use App\Events\Backend\Auth\User\UserPermanentlyDeleted;
 use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
+use Mail;
 
 /**
  * Class UserRepository.
@@ -358,5 +359,32 @@ class UserRepository extends BaseRepository
                 throw new GeneralException(trans('exceptions.backend.access.users.email_error'));
             }
         }
+    }
+    
+    /**
+     * Approve the doctor
+     * 
+     * @param User $user
+     */
+    public function approveDoctor(User $user)
+    {
+        $doctor = $user->doctor()->first();
+        if (!$doctor) {
+            return false;
+        }
+        $user->is_doctor = 1;
+        $user->save();
+        $doctor->verified = 1;
+        $doctor->save();
+        
+        if ($user->email) {
+            //send email to doctor.
+            Mail::send('frontend.mail.approved', ['user' => $user], 
+                    function($message) use ($user) {
+                        $message->to($user->email)
+                            ->subject('Approved doctor request');
+            });
+        }
+        return true;
     }
 }

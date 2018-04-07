@@ -95,7 +95,9 @@ class UserRepository extends BaseRepository
             $user = parent::create([
                 'first_name'        => $data['first_name'],
                 'last_name'         => $data['last_name'],
-                'email'             => $data['email'],
+                'email'             => !empty($data['email']) ? $data['email'] : null,
+                'aadhar_no'         => $data['aadhar_no'],
+                'phone'             => $data['phone'],
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'active'            => 1,
                 'password'          => Hash::make($data['password']),
