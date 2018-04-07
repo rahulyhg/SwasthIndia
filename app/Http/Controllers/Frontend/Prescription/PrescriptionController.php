@@ -14,13 +14,7 @@ class PrescriptionController extends Controller
         return view('frontend.prescription.create')
                 ->withHospitals($names = array_pluck(HospitalRepository::getNames(), 'name', 'id'))
                 ->withDiseases($names = array_pluck(DiseaseRepository::getNames(), 'name', 'id'))
-                ->withPatientid(auth()->id());
-    }
-    public function store(Request $request)
-    {   
-        return view('frontend.prescription.create')
-                ->withHospitals($names = array_pluck(HospitalRepository::getNames(), 'name', 'id'))
-                ->withDiseases($names = array_pluck(DiseaseRepository::getNames(), 'name', 'id'))
-                ->withPatientid(auth()->id());
+                ->withPatientid(auth()->id())
+                ->withUserid(auth()->id());
     }
 }
