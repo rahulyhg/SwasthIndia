@@ -183,9 +183,14 @@
 
         };
 
-        $('#files').on('change', function () {
+        $('#images').on('change', function () {
             imagesPreview(this, 'div.gallery');
         });
     });
+    
+    $(document).ready(function() {
+    $('select').select2({tags: true});
+});
+    
     </script>
     @endpush
