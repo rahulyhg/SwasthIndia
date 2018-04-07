@@ -133,6 +133,15 @@ return [
                     'name' => 'Name',
                     'sort' => 'Sort',
                 ],
+                'prescriptions' => [
+                    'doctor' => 'Doctor',
+                    'title' => 'Title',
+                    'text' => 'Text',
+                    'disease' => 'Disease',
+                    'files' => 'Presciption Files',
+                    'choice' => 'Show/hide your diseases',
+                    'name' => 'Hospital Name'
+                ],
                 'users' => [
                     'active' => 'Active',
                     'associated_roles' => 'Associated Roles',
