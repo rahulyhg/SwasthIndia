@@ -57,7 +57,7 @@ return [
         /*
          * Login username to be used by the controller.
          */
-        'username' => 'email',
+        'username' => 'aadhar_no',
 
         /*
          * Session Database Driver Only
@@ -90,4 +90,5 @@ return [
      * Makes it so social logins can not change passwords, etc.
      */
     'socialite_session_name' => 'socialite_provider',
+    'admin_mail' => env('ADMIN_EMAIL'),
 ];

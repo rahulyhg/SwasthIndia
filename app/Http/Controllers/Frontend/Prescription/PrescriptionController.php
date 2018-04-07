@@ -53,6 +53,7 @@ class PrescriptionController extends Controller
         return view('frontend.prescription.create')
                 ->withHospitals($names = array_pluck(HospitalRepository::getNames(), 'name', 'id'))
                 ->withDiseases($names = array_pluck(DiseaseRepository::getNames(), 'name', 'id'))
+
                 ->withPatientid(auth()->id());
     }
     
@@ -80,16 +81,5 @@ class PrescriptionController extends Controller
     }
     
     
-    /**
-     * @param Prescription $prescription
-     * @param ManagePrescriptionRequest $prescription
-     *
-     * @return mixed
-     */
-    public function show(Disease $disease, ManageDiseaseRequest $request)
-    {
-        return view('backend.disease.show')
-            ->withDisease($disease);
-    }
 }
     

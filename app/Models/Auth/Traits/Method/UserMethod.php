@@ -76,6 +76,23 @@ trait UserMethod
     }
 
     /**
+     * @return mixed
+     */
+    public function isDoctor()
+    {
+        $doctor = $this->doctor()->first();
+        return $doctor ? $doctor->verified : null;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function appliedDoctor()
+    {
+        return $this->doctor()->first();
+    }
+
+    /**
      * @return bool
      */
     public function isActive()

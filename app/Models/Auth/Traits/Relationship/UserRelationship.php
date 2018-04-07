@@ -25,4 +25,11 @@ trait UserRelationship
     {
         return $this->hasMany(Session::class);
     }
+    /**
+     * @return mixed
+     */
+    public function doctor()
+    {
+        return $this->hasOne(\App\Models\Auth\DoctorDetail::class);
+    }
 }

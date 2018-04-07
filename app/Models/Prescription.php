@@ -28,6 +28,6 @@ class Prescription extends Model
         'images',
         'diseases',
         'files',
-        'titles',
+        'user_id',
     ];
 }
