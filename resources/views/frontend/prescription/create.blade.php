@@ -41,6 +41,13 @@
                                     ->required() }}
                                             </div><!--col-->
                                         </div><!--form-group-->
+                                        
+                                        <div class="form-group row">
+                                            <div class="col-md-10">
+                                                {{ html()->hidden('patient_id', $patientid)
+                                    ->class('form-control')}}
+                                            </div><!--col-->
+                                        </div><!--form-group-->
 
                                         <div class="form-group row">
                                             {{ html()->label(__('validation.attributes.backend.access.prescriptions.title'))->class('col-md-2 form-control-label')->for('title') }}
