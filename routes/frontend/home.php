@@ -10,7 +10,7 @@ Route::post('contact/send', 'ContactController@send')->name('contact.send');
 
 
 Route::get('user-prescription', 'Prescription\PrescriptionController@create')->name('user.prescription');
-//Route::post('user-prescription-save', 'Prescription\PrescriptionController@store')->name('prescription.store');
+Route::post('user-prescription-save', 'Prescription\PrescriptionController@store')->name('frontend.prescription.store');
 
 /*
  * These frontend controllers require the user to be logged in
