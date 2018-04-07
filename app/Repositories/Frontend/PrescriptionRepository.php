@@ -34,4 +34,36 @@ class PrescriptionRepository extends BaseRepository
             ->paginate($paged);
     }
 
+
+    /**
+     * 
+     * @param array $data
+     * @return \App\Repositories\Backend\Auth\Hospital
+     */
+    public function create(array $data) : Hospital
+    {
+        return DB::transaction(function () use ($data) {
+
+            $hospital = parent::create([
+                'patient_id' => $data['patient_id'],
+                'user_id' => $data['user_id'],
+                'doctor_id' => $data['doctor_id'],
+                'doctor_name' => isset($data['doctor_name']),
+                'title' => $data['title'],
+/********/      'treatment_id' => $data['treatment_id'] ? 1 : 1, // Call Save For Treatment
+                'is_active' => isset($data['is_active']) && $data['is_active'] == '1' ? 1 : 0
+                'description' => $data['description'],
+                'disease' => (isset($data['description']) && count($data['description'])) ? json_encode($data['description']) : NULL,
+                'hospital_id' => $data['hospital_id'],
+                'doctor_name' => isset($data['doctor_name']),
+            ]);
+
+            if ($hospital) {
+                return $hospital;
+            }
+
+            throw new GeneralException(__('exceptions.backend.access.hospitals.create_error'));
+        });
+    }
+
 }

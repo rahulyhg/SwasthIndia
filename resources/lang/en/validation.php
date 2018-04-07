@@ -190,7 +190,12 @@ return [
             'degree'                    => 'Degree',
             'specialisation'            => 'Specialisation',
             'surgeon'                   => 'Surgeon',
-            'upload-documents'          => 'Upload Documents'
+            'upload-documents'          => 'Upload Documents',
+            'access' => [
+                'prescriptions' => [
+                    'treatment' => 'Treatment',
+                ],
+            ],
         ],
     ],
 ];

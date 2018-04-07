@@ -50,12 +50,16 @@ return [
         ],
     ],
 
+
     'frontend' => [
         'contact' => [
             'sent' => 'Your information was successfully sent. We will respond back to the e-mail provided as soon as we can.',
         ],
         'user' => [
             'register-doctor' => 'We have sent your request to the admin. You will get an update once you are verified as a doctor.'
+        ],
+        'prescription' => [
+            'created' => 'The prescription was successfully created.'
         ]
     ],
 ];

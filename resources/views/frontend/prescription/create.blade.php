@@ -14,7 +14,12 @@
                 <div class="row">
                     <div class="card-body">
                         {{ html()->form('POST', url('user-prescription-save'))->class('form-horizontal')->open() }}
-
+                                {{ html()->hidden('patient_id', $patientid)
+                                    ->class('form-control')}}
+                                        
+                        {{ html()->hidden('user_id', $userid)
+                                ->class('form-control')}}
+                                        
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
@@ -42,20 +47,6 @@
                                         </div><!--form-group-->
                                         
                                         <div class="form-group row">
-                                            <div class="col-md-10">
-                                                {{ html()->hidden('patient_id', $patientid)
-                                    ->class('form-control')}}
-                                            </div><!--col-->
-                                        </div><!--form-group-->
-                                        
-                                        <div class="form-group row">
-                                            <div class="col-md-10">
-                                                {{ html()->hidden('user_id', $userid)
-                                    ->class('form-control')}}
-                                            </div><!--col-->
-                                        </div><!--form-group-->
-
-                                        <div class="form-group row">
                                             {{ html()->label(__('validation.attributes.backend.access.prescriptions.title'))->class('col-md-2 form-control-label')->for('title') }}
 
                                             <div class="col-md-10">
@@ -63,6 +54,17 @@
                                     ->class('form-control')
                                     ->placeholder(__('validation.attributes.backend.access.prescriptions.title'))
                                     ->attribute('maxlength', 191) }}
+                                            </div><!--col-->
+                                        </div><!--form-group-->
+
+                                        <div class="form-group row">
+                                            {{ html()->label(__('validation.attributes.frontend.access.prescriptions.treatment'))->class('col-md-2 form-control-label')->for('treatment_id') }}
+
+                                            <div class="col-md-10">
+                                                {{ html()->text('treatment_id')
+                                                    ->class('form-control')
+                                                    ->placeholder(__('validation.attributes.frontend.access.prescriptions.treatment'))
+                                                    ->attribute('maxlength', 191) }}
                                             </div><!--col-->
                                         </div><!--form-group-->
 

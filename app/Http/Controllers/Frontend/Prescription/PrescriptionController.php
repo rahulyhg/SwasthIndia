@@ -53,7 +53,7 @@ class PrescriptionController extends Controller
         return view('frontend.prescription.create')
                 ->withHospitals($names = array_pluck(HospitalRepository::getNames(), 'name', 'id'))
                 ->withDiseases($names = array_pluck(DiseaseRepository::getNames(), 'name', 'id'))
-
+                ->withUserid(auth()->id())
                 ->withPatientid(auth()->id());
     }
     
@@ -67,17 +67,20 @@ class PrescriptionController extends Controller
         echo "<pre>";dd($request->all());die;
 
 
-        $this->prescriptionRepository->create($request->only(
-                'patient_id',
-                'title',
-                'description',
-                'disease',
-                'images',
-                'hospital_id',
-                'is_active'
+        $this->prescriptionRepository->create($request->all(
+//                'patient_id',
+//                'title',
+//                'description',
+//                'disease',
+//                'images',
+//                'hospital_id',
+//                'doctor_id',
+//                'doctor_name',
+//                'is_active'
         ));
 
-        return redirect()->route('frontend.prescription.index')->withFlashSuccess(__('alerts.frontend.prescription.created'));
+        
+        return redirect()->route('user.dashboard')->withFlashSuccess(__('alerts.frontend.prescription.created'));
     }
     
     
