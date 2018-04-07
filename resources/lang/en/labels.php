@@ -169,6 +169,16 @@ return [
         ],
     ],
     'frontend' => [
+        'dashboard' => [
+            'notification'  => 'Notification',
+            'blood_group'   => 'Blood Group',
+            'prescription'  => 'Prescription Details',
+            'healthy_india' => 'Healthy India',
+            'add_patient'   => 'Add Patient',
+            'view_patient'  => 'View Patient List',
+            'add_blood_group'  => 'Add Blood Group',
+            'add_prescription'  => 'Add Prescription',
+        ],
         'auth' => [
             'login_box_title' => 'Login',
             'login_button' => 'Login',

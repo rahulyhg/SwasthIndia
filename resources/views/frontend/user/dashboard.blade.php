@@ -52,7 +52,8 @@
                         </div>
 
                         <div class="card mb-4">
-                            <div class="card-header">Notifications</div>
+                            <div class="card-header">
+                                        {{__('labels.frontend.dashboard.notification')}}</div>
                             <div class="card-body">
                                 <p class="card-text">No notifications found.</p>
                             </div>
@@ -64,11 +65,43 @@
                             <div class="col">
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        Blood Group
+                                        {{__('labels.frontend.dashboard.blood_group')}}
                                     </div><!--card-header-->
 
                                     <div class="card-body">
-                                        <a class="btn btn-danger" href=""><i class="fa fa-plus"></i>&nbsp;&nbsp;Add Blood Group</a>
+                                        <a class="btn btn-danger" href=""><i class="fa fa-plus"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.add_blood_group')}}</a>
+                                    </div><!--card-body-->
+                                </div><!--card-->
+                            </div><!--col-md-6-->
+                        </div><!--row-->
+                        @if ($logged_in_user->isDoctor())
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        {{__('labels.frontend.dashboard.patient')}}
+                                    </div><!--card-header-->
+
+                                    <div class="card-body">
+                                        <button class="btn btn-info">
+                                            <i class="fa fa-plus-circle"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.view_patient')}}</button>
+                                        <a class="btn btn-success" href="{{ url("/user-prescription") }}">
+                                            <i class="fa fa-stethoscope"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.add_patient')}}</a>
+                                    </div><!--card-body-->
+                                </div><!--card-->
+                            </div><!--col-md-6-->
+                        </div><!--row-->
+                        @endif
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        {{__('labels.frontend.dashboard.prescription')}}
+                                    </div><!--card-header-->
+
+                                    <div class="card-body">
+                                        <a class="btn btn-danger" href="{{ url("/user-prescription") }}"><i class="fa fa-stethoscope"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.add_prescription')}}</a>
                                     </div><!--card-body-->
                                 </div><!--card-->
                             </div><!--col-md-6-->
@@ -78,21 +111,7 @@
                             <div class="col">
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        Prescription Details
-                                    </div><!--card-header-->
-
-                                    <div class="card-body">
-                                        <a class="btn btn-danger" href="{{ url("/user-prescription") }}"><i class="fa fa-stethoscope"></i>&nbsp;&nbsp;Add Prescription</a>
-                                    </div><!--card-body-->
-                                </div><!--card-->
-                            </div><!--col-md-6-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        Healthy India
+                                        {{__('labels.frontend.dashboard.healthy_india')}}
                                     </div><!--card-header-->
 
                                     <div class="card-body display-4">

@@ -51,7 +51,7 @@ class PrescriptionRepository extends BaseRepository
                 'doctor_name' => isset($data['doctor_name']),
                 'title' => $data['title'],
 /********/      'treatment_id' => $data['treatment_id'] ? 1 : 1, // Call Save For Treatment
-                'is_active' => isset($data['is_active']) && $data['is_active'] == '1' ? 1 : 0
+                'is_active' => isset($data['is_active']) && $data['is_active'] == '1' ? 1 : 0,
                 'description' => $data['description'],
                 'disease' => (isset($data['description']) && count($data['description'])) ? json_encode($data['description']) : NULL,
                 'hospital_id' => $data['hospital_id'],

@@ -36,4 +36,7 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
          */
         Route::patch('profile/update', 'ProfileController@update')->name('profile.update');
     });
+    Route::group(['namespace' => 'Doctor', 'as' => 'user.', 'middleware' => 'doctor'], function () {
+        Route::post('patient/send/otp', 'DoctorController@sendOtp')->name('send.otp');
+    });
 });
