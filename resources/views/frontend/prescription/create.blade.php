@@ -182,9 +182,14 @@
 
         };
 
-        $('#files').on('change', function () {
+        $('#images').on('change', function () {
             imagesPreview(this, 'div.gallery');
         });
     });
+    
+    $(document).ready(function() {
+    $('#diseases').select2();
+});
+    
     </script>
     @endpush
