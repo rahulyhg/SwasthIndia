@@ -50,7 +50,7 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link {{ active_class(Active::checkUriPattern('admin/log-viewer')) }}" href="{{ route('log-viewer::dashboard') }}">
-                            {{ __('menus.backend.log-viewer.dashboard') }}
+                            View Logs
                         </a>
                     </li>
                     <li class="nav-item">
@@ -60,6 +60,18 @@
                     </li>
                 </ul>
             </li>
+            
+
+            @if ($logged_in_user->isAdmin())
+            
+                <li class="nav-item">
+                    <a class="nav-link {{ active_class(Active::checkUriPattern('admin/disease')) }}" href="{{ route('admin.disease.index') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.disease') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ active_class(Active::checkUriPattern('admin/hospital')) }}" href="{{ route('admin.hospital.index') }}"><i class="icon-speedometer"></i> {{ __('menus.backend.sidebar.hospital') }}</a>
+                </li>
+            @endif
+            
         </ul>
     </nav>
 </div><!--sidebar-->

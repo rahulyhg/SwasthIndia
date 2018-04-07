@@ -1,6 +1,6 @@
 <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">☰</button>
-    <a class="navbar-brand" href="#"></a>
+    <a class="navbar-brand" href="#"><b>Swasth India</b></a>
     <button class="navbar-toggler sidebar-minimizer d-md-down-none" type="button">☰</button>
 
     <ul class="nav navbar-nav d-md-down-none">
@@ -41,16 +41,8 @@
 
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header text-center">
-                    <strong>Heading</strong>
+                    <a href="{{route('frontend.user.account')}}" style="text-decoration: none;"><strong>My Account</strong></a>
                 </div>
-                <a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Link<span class="badge badge-info">0</span></a>
-                <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Link</a>
-
-                <div class="dropdown-header text-center">
-                    <strong>Heading</strong>
-                </div>
-                <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Link</a>
-                <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Link<span class="badge badge-primary">0</span></a>
                 <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}"><i class="fa fa-lock"></i> {{ __('navs.general.logout') }}</a>
             </div>
         </li>

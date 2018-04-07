@@ -36,6 +36,9 @@ return [
                 'view'            => 'View User',
             ],
         ],
+        
+        'hospital' => [
+        ],
 
         'log-viewer' => [
             'main'      => 'Log Viewer',
@@ -47,6 +50,8 @@ return [
             'dashboard' => 'Dashboard',
             'general'   => 'General',
             'system'    => 'System',
+            'disease'    => 'Disease',
+            'hospital'  => 'Hospital'
         ],
     ],
 
