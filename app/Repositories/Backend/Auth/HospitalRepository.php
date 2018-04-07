@@ -97,5 +97,12 @@ class HospitalRepository extends BaseRepository
             throw new GeneralException(__('exceptions.backend.access.hospitals.update_error'));
         });
     }
+    
+    public static function getNames()
+    {   
+        return Hospital::select(['id','name'])
+                ->where('active', 1)
+                ->get()->toArray();
+    }
 
 }

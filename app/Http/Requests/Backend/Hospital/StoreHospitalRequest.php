@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Backend\Auth\Hosptial;
+namespace App\Http\Requests\Backend\Hosptial;
 
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;

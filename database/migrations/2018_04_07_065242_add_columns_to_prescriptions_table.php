@@ -4,16 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnsToPrescriptionsTable extends Migration
-{
+class AddColumnsToPrescriptionsTable extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        //
+    public function up() {
+        Schema::table('prescriptions', function (Blueprint $table) {
+                $table->text('images')->nullable();
+                $table->text('diseases')->nullable();
+                $table->text('files')->nullable();
+                $table->text('title')->nullable();
+        });
     }
 
     /**
@@ -21,8 +25,8 @@ class AddColumnsToPrescriptionsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         //
     }
+
 }

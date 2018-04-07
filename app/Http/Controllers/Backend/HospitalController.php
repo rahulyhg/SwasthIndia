@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Models\Auth\Hospital;
 use App\Repositories\Backend\Auth\HospitalRepository;
-use App\Http\Requests\Backend\Auth\Hospital\ManageHospitalRequest;
+use App\Http\Requests\Backend\Hospital\ManageHospitalRequest;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\Auth\Hosptial\StoreHospitalRequest;
-use App\Http\Requests\Backend\Auth\Hosptial\UpdateHospitalRequest;
+use App\Http\Requests\Backend\Hosptial\StoreHospitalRequest;
+use App\Http\Requests\Backend\Hosptial\UpdateHospitalRequest;
 
 class HospitalController extends Controller
 {

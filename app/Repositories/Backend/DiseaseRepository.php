@@ -56,5 +56,11 @@ class DiseaseRepository extends BaseRepository
             throw new GeneralException(__('exceptions.backend.access.users.update_error'));
         });
     }
+    
+    public static function getNames()
+    {   
+        return Disease::select(['id','name'])
+                ->get()->toArray();
+    }
 
 }
