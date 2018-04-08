@@ -36,8 +36,8 @@ class PrescriptionRepository extends BaseRepository
 
             $prescription = parent::create([
                 'patient_id' => $data['patient_id'],
-                'user_id' => $data['user_id'],
-                'doctor_id' => isset($data['doctor_id']) ? $data['doctor_id'] : NULL,
+                'user_id' => $data['user_ida'],
+                'doctor_id' => isset($data['doctor']) ? $data['doctor'] : NULL,
                 'doctor_name' => isset($data['doctor_name']) ? $data['doctor_name'] : NULL,
                 'treatment_id' => $trId, // Call Save For Treatment
 
