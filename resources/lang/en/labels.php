@@ -82,6 +82,18 @@ return [
                 'edit' => 'Edit Prescription',
                 'create' => 'Create Prescription',
             ],
+            'test' => [
+                'management' => 'Lab Test Management',
+                'edit' => 'Edit Lab Test',
+                'create' => 'Add New Lab Test',
+                'name' => 'Add New Lab Test',
+            ],
+            'test_record' => [
+                'management' => 'Lab Test Management',
+                'edit' => 'Edit Lab Test',
+                'create' => 'Add New Lab Test',
+                'name' => 'Add New Lab Test',
+            ],
             'users' => [
                 'active' => 'Active Users',
                 'all_permissions' => 'All Permissions',

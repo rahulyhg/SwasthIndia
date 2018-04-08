@@ -64,7 +64,7 @@ class PrescriptionController extends Controller
      */
     public function store(StorePrescriptionRequest $request)
     {
-        echo "<pre>";dd($request->all());die;
+//        echo "<pre>";dd($request->all());die;
 
 
         $this->prescriptionRepository->create($request->all(

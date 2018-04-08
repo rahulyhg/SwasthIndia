@@ -25,6 +25,16 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
          * User Dashboard Specific
          */
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        /*
+         * Test Specific
+         */
+        Route::get('test', 'TestController@index')->name('test');
+        Route::get('test/create', 'TestController@create')->name('test.create');
+        Route::post('test/create', 'TestController@store')->name('test.store');
+
+        Route::get('test-record', 'TestRecordController@index')->name('test_record');
+        Route::get('test-record/create', 'TestRecordController@create')->name('test_record.create');
+        Route::post('test-record/create', 'TestRecordController@store')->name('test_record.store');
 
         /*
          * User Account Specific

@@ -19,7 +19,12 @@ class PrescriptionRepository extends BaseRepository
     {
         return Prescription::class;
     }
-    
+
+    public function getPrescriptionListById($patientId)
+    {
+        return $this->where('patient_id',$patientId)->get();
+    }
+
       /**
      * @param int    $paged
      * @param string $orderBy
@@ -50,12 +55,11 @@ class PrescriptionRepository extends BaseRepository
                 'doctor_id' => $data['doctor_id'],
                 'doctor_name' => isset($data['doctor_name']),
                 'title' => $data['title'],
-/********/      'treatment_id' => $data['treatment_id'] ? 1 : 1, // Call Save For Treatment
+                'treatment_id' => $data['treatment_id'] ? 1 : 1, // Call Save For Treatment
                 'is_active' => isset($data['is_active']) && $data['is_active'] == '1' ? 1 : 0,
                 'description' => $data['description'],
                 'disease' => (isset($data['description']) && count($data['description'])) ? json_encode($data['description']) : NULL,
-                'hospital_id' => $data['hospital_id'],
-                'doctor_name' => isset($data['doctor_name']),
+                'hospital_id' => $data['hospital_id']
             ]);
 
             if ($hospital) {

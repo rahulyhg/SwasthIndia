@@ -33,8 +33,8 @@ class DoctorRepository extends BaseRepository
      */
     public function create(array $data)
     {
-        $user = auth()->user();
-        return DB::transaction(function () use ($data, $user) {
+            $user = auth()->user();
+            return DB::transaction(function () use ($data, $user) {
             $doctor_degrees = [];
             foreach ($data['upload_documents'] as $document) {
                 $filename = time() . '-' . $document->getClientOriginalName();
