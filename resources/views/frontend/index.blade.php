@@ -10,11 +10,14 @@
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote">
-                        Namaskar, {{ __('strings.frontend.welcome_to', ['place' => app_name()]) }}! <br/>
-                        <em>Swasth India(i.e, Healthy india) is an effort for storing the complete information of a patient's medical background
-                            ,doctor's information and hospital's information.</em>
+                        <b>Namaskar, {{ __('strings.frontend.welcome_to', ['place' => app_name()]) }}! </b><br/><br/>
+                        
+                        <p>Swasth India is an health care application which will help every Indian to keep track of their health records. The idea is to create a central database of health records. This can aid health practitioners in providing better and more accurate treatment by looking at the medical history of patients. </p>
+                        <p>This will also reduce the time required to attend a patient. So while we work on increasing the doctors to patient ratio in our country, this can increase the number of patients a doctor can attend to.</p>
 
-                        <br><br>Some of the features of this application are mentioned below
+                        <p>Swasth India is not just about that but it is a assortment of multiple solutions within one application.</p>
+
+                        Some of the features of this application are mentioned below
                         <ul class="list-unstyled">
                         <ul>     
                         <li>Complete health record (User)</li>
