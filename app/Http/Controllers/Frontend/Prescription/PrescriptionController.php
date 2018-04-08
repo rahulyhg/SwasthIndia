@@ -63,8 +63,7 @@ class PrescriptionController extends Controller
      * @return mixed
      */
     public function store(StorePrescriptionRequest $request)
-    {
-        echo "<pre>";dd($request->all());die;
+    { 
 
 
         $this->prescriptionRepository->create($request->all(
@@ -80,7 +79,7 @@ class PrescriptionController extends Controller
         ));
 
         
-        return redirect()->route('user.dashboard')->withFlashSuccess(__('alerts.frontend.prescription.created'));
+        return redirect()->route('frontend.user.dashboard')->withFlashSuccess(__('alerts.frontend.prescription.created'));
     }
     
     

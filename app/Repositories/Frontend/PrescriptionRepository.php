@@ -20,19 +20,6 @@ class PrescriptionRepository extends BaseRepository
         return Prescription::class;
     }
     
-      /**
-     * @param int    $paged
-     * @param string $orderBy
-     * @param string $sort
-     *
-     * @return mixed
-     */
-    public function getActivePaginated($paged = 25, $orderBy = 'created_at', $sort = 'desc') : LengthAwarePaginator
-    {
-        return $this->model
-            ->orderBy($orderBy, $sort)
-            ->paginate($paged);
-    }
 
 
     /**
@@ -40,30 +27,38 @@ class PrescriptionRepository extends BaseRepository
      * @param array $data
      * @return \App\Repositories\Backend\Auth\Hospital
      */
-    public function create(array $data) : Hospital
+    public function create(array $data) : Prescription
     {
-        return DB::transaction(function () use ($data) {
+        $result =  DB::transaction(function () use ($data) {
 
-            $hospital = parent::create([
+             $treatmentRepo = new TreatmentRepository();
+             $trId = $treatmentRepo->create($data)->id;
+
+            $prescription = parent::create([
                 'patient_id' => $data['patient_id'],
                 'user_id' => $data['user_id'],
-                'doctor_id' => $data['doctor_id'],
-                'doctor_name' => isset($data['doctor_name']),
+                'doctor_id' => isset($data['doctor_id']) ? $data['doctor_id'] : NULL,
+                'doctor_name' => isset($data['doctor_name']) ? $data['doctor_name'] : NULL,
+                'treatment_id' => $trId, // Call Save For Treatment
+
                 'title' => $data['title'],
-/********/      'treatment_id' => $data['treatment_id'] ? 1 : 1, // Call Save For Treatment
-                'is_active' => isset($data['is_active']) && $data['is_active'] == '1' ? 1 : 0
+                'is_active' => isset($data['is_active']) && $data['is_active'] == '1' ? 1 : 0,  
                 'description' => $data['description'],
-                'disease' => (isset($data['description']) && count($data['description'])) ? json_encode($data['description']) : NULL,
-                'hospital_id' => $data['hospital_id'],
-                'doctor_name' => isset($data['doctor_name']),
+                'diseases' => (isset($data['diseases']) && count($data['diseases'])) ? json_encode($data['diseases']) : NULL,
+                'hospital_id' => isset($data['hospital_id']) ? $data['hospital_id'] : '',
             ]);
-
-            if ($hospital) {
-                return $hospital;
+            if ($prescription) {
+                return $prescription;
             }
-
             throw new GeneralException(__('exceptions.backend.access.hospitals.create_error'));
         });
+
+        return $result;
+    }
+
+    protected function getTreatmentId($data){
+        $treatmentRepo = new TreatmentRepository();
+        return $treatmentRepo->create($data)->id;
     }
 
 }
