@@ -16,4 +16,8 @@ class HomeController extends Controller
     {
         return view('frontend.index');
     }
+    public function doctor()
+    {
+        return view('frontend.doctor');
+    }
 }
