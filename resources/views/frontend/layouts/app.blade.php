@@ -48,6 +48,13 @@
                     color: white;
                     font-size: 18px;
                 }
+                .navbar-light .navbar-brand {
+                    color: white 
+                }
+                .navbar-light .navbar-brand:hover {
+                    color: rgb(32, 127, 249);
+                    font-weight: bold;
+                }
             </style>
             @stack('after-styles')
         </head>
