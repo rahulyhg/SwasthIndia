@@ -97,9 +97,9 @@
                                     </div><!--card-header-->
 
                                     <div class="card-body">
-                                        <button class="btn btn-info">
-                                            <i class="fa fa-plus-circle"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.view_patient')}}</button>
-                                        <button class="btn btn-warning"  data-toggle="modal" data-target="#add_patient">
+                                        <a href="{{route('frontend.patient.list')}}" class="btn btn-warning">
+                                            <i class="fa fa-plus-circle"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.view_patient')}}</a>
+                                        <button class="btn btn-info"  data-toggle="modal" data-target="#add_patient">
                                             <i class="fa fa-stethoscope"></i>&nbsp;&nbsp;
                                             {{__('labels.frontend.dashboard.add_patient')}}
                                         </button>

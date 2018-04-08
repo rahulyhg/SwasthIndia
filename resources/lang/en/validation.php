@@ -211,7 +211,7 @@ return [
             'upload-documents'          => 'Upload Documents',
             'access' => [
                 'prescriptions' => [
-                    'treatment' => 'Treatment',
+                    'treatment' => 'Treatment Name',
                 ],
             ],
         ],

@@ -187,6 +187,7 @@ return [
             'allergies'   => 'Allergies',
             'prescription'  => 'Prescription Details',
             'healthy_india' => 'Healthy India',
+            'patient'       => 'Patient',
             'add_patient'   => 'Add Patient',
             'view_patient'  => 'View Patient List',
             'add_blood_group'  => 'Add Blood Group',

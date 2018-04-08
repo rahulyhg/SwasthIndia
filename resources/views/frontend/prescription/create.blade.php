@@ -39,9 +39,8 @@
                                             {{ html()->label(__('validation.attributes.backend.access.prescriptions.doctor'))->class('col-md-2 form-control-label')->for('doctor') }}
 
                                             <div class="col-md-10">
-                                                {{ html()->select('doctor')
+                                                {{ html()->select('doctor', ['' => 'Select Doctor'] + $doctors)
                                     ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.access.prescriptions.doctor'))
                                     ->attribute('maxlength', 191) }}
                                             </div><!--col-->
                                         </div><!--form-group-->

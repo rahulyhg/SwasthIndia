@@ -10,6 +10,7 @@ use App\Repositories\Backend\Auth\HospitalRepository;
 use App\Repositories\Backend\DiseaseRepository;
 use App\Http\Requests\Frontend\Prescription\ManagePrescriptionRequest;
 use App\Http\Requests\Frontend\Prescription\StorePrescriptionRequest;
+use App\Repositories\Frontend\Auth\UserRepository;
 
 
 class PrescriptionController extends Controller
@@ -50,9 +51,11 @@ class PrescriptionController extends Controller
      */
     public function create(Request $request)
     {   
+        
         return view('frontend.prescription.create')
-                ->withHospitals($names = array_pluck(HospitalRepository::getNames(), 'name', 'id'))
-                ->withDiseases($names = array_pluck(DiseaseRepository::getNames(), 'name', 'id'))
+                ->withHospitals(array_pluck(HospitalRepository::getNames(), 'name', 'id'))
+                ->withDiseases(array_pluck(DiseaseRepository::getNames(), 'name', 'id'))
+                ->withDoctors(array_pluck(UserRepository::getDoctors(), 'first_name', 'id'))
                 ->withUserid(auth()->id())
                 ->withPatientid(auth()->id());
     }

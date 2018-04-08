@@ -43,6 +43,12 @@ class UserRepository extends BaseRepository
 
         return false;
     }
+    
+    public static function getDoctors()
+    {
+        return User::select(['id', 'first_name'])->where('is_doctor', 1)
+                ->where('active', 1)->where('confirmed', 1)->get()->toArray();
+    }
 
     /**
      * @param $uuid
