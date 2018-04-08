@@ -20,7 +20,11 @@ class PrescriptionRepository extends BaseRepository
         return Prescription::class;
     }
     
-
+    public function getPrescriptionListById($patientId)
+    {
+        return $this->where('patient_id',$patientId)->get();
+    }
+    
 
     /**
      * 
@@ -36,8 +40,8 @@ class PrescriptionRepository extends BaseRepository
 
             $prescription = parent::create([
                 'patient_id' => $data['patient_id'],
-                'user_id' => $data['user_ida'],
-                'doctor_id' => isset($data['doctor']) ? $data['doctor'] : NULL,
+                'user_id' => $data['user_id'],
+                'doctor_id' => isset($data['doctor_id']) ? $data['doctor_id'] : NULL,
                 'doctor_name' => isset($data['doctor_name']) ? $data['doctor_name'] : NULL,
                 'treatment_id' => $trId, // Call Save For Treatment
 
@@ -45,7 +49,7 @@ class PrescriptionRepository extends BaseRepository
                 'is_active' => isset($data['is_active']) && $data['is_active'] == '1' ? 1 : 0,  
                 'description' => $data['description'],
                 'diseases' => (isset($data['diseases']) && count($data['diseases'])) ? json_encode($data['diseases']) : NULL,
-                'hospital_id' => isset($data['hospital_id']) ? $data['hospital_id'] : '',
+//                'hospital_id' => isset($data['hospital_id']) ? $data['hospital_id'] : '',
             ]);
             if ($prescription) {
                 return $prescription;

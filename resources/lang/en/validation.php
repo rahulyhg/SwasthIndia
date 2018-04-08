@@ -138,9 +138,25 @@ return [
                     'title' => 'Title',
                     'text' => 'Text',
                     'disease' => 'Disease',
-                    'files' => 'Presciption Files',
+                    'files' => 'Prescription Files',
                     'choice' => 'Show/hide your diseases',
                     'name' => 'Hospital Name'
+                ],
+                'test' => [
+                    'name' => 'Test Name',
+                    'prescription' => 'Prescription',
+                    'description' => 'Description',
+                    'patient' => 'Patient',
+                    'files' => 'Lab Test Report Files',
+                ],
+                'test_record' => [
+                    'name' => 'Test Report Name',
+                    'placeholder_name' => '--- Select a Test Report Name ---',
+                    'placeholder_prescription' => '--- Select a Prescription (if any)---',
+                    'prescription' => 'Prescription',
+                    'description' => 'Description',
+                    'patient' => 'Patient',
+                    'files' => 'Lab Test Report Files',
                 ],
                 'users' => [
                     'active' => 'Active',
@@ -195,7 +211,7 @@ return [
             'upload-documents'          => 'Upload Documents',
             'access' => [
                 'prescriptions' => [
-                    'treatment' => 'Treatment',
+                    'treatment' => 'Treatment Name',
                 ],
             ],
         ],

@@ -25,6 +25,8 @@ return [
         'macros'    => 'Macros',
         'register'  => 'Register',
         'prescription'  => 'Prescription',
+        'test'  => 'Lab Test',
+        'test_record'  => 'Lab Test Report',
 
         'user' => [
             'account'         => 'My Account',

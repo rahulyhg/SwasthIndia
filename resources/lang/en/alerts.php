@@ -60,6 +60,9 @@ return [
         ],
         'prescription' => [
             'created' => 'The prescription was successfully created.'
+        ],
+        'test_record' => [
+            'created' => 'The Test Record was successfully Uploaded.'
         ]
     ],
 ];

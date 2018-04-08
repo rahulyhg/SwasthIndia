@@ -6,20 +6,15 @@
         <div class="card">
             <div class="card-header">
                 <strong>
-                    <i class="fa fa-stethoscope"></i> {{ __('navs.frontend.prescription') }}
+                    <i class="fa fa-dashboard"></i> {{ __('navs.frontend.test') }}
                 </strong>
             </div><!--card-header-->
 
             <div class="card-body">
                 <div class="row">
                     <div class="card-body">
-                        {{ html()->form('POST', url('user-prescription-save'))->class('form-horizontal')->open() }}
-                                {{ html()->hidden('patient_id', $patientid)
-                                    ->class('form-control')}}
-                                        
-                        {{ html()->hidden('user_id', $userid)
-                                ->class('form-control')}}
-                                        
+                        {{ html()->form('POST', route('admin.hospital.store'))->class('form-horizontal')->open() }}
+
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
@@ -39,12 +34,14 @@
                                             {{ html()->label(__('validation.attributes.backend.access.prescriptions.doctor'))->class('col-md-2 form-control-label')->for('doctor') }}
 
                                             <div class="col-md-10">
-                                                {{ html()->select('doctor', ['' => 'Select Doctor'] + $doctors)
+                                                {{ html()->select('doctor')
                                     ->class('form-control')
-                                    ->attribute('maxlength', 191) }}
+                                    ->placeholder(__('validation.attributes.backend.access.prescriptions.doctor'))
+                                    ->attribute('maxlength', 191)
+                                    ->required() }}
                                             </div><!--col-->
                                         </div><!--form-group-->
-                                        
+
                                         <div class="form-group row">
                                             {{ html()->label(__('validation.attributes.backend.access.prescriptions.title'))->class('col-md-2 form-control-label')->for('title') }}
 
@@ -57,21 +54,10 @@
                                         </div><!--form-group-->
 
                                         <div class="form-group row">
-                                            {{ html()->label(__('validation.attributes.frontend.access.prescriptions.treatment'))->class('col-md-2 form-control-label')->for('treatment_id') }}
+                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.text'))->class('col-md-2 form-control-label')->for('text') }}
 
                                             <div class="col-md-10">
-                                                {{ html()->text('treatment_id')
-                                                    ->class('form-control')
-                                                    ->placeholder(__('validation.attributes.frontend.access.prescriptions.treatment'))
-                                                    ->attribute('maxlength', 191) }}
-                                            </div><!--col-->
-                                        </div><!--form-group-->
-
-                                        <div class="form-group row">
-                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.text'))->class('col-md-2 form-control-label')->for('description') }}
-
-                                            <div class="col-md-10">
-                                                {{ html()->textarea('description')
+                                                {{ html()->textarea('text')
                                     ->class('form-control')
                                     ->placeholder(__('validation.attributes.backend.access.prescriptions.text'))
                                     ->attribute('maxlength', 191) }}
@@ -79,20 +65,21 @@
                                         </div><!--form-group-->
 
                                         <div class="form-group row">
-                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.disease'))->class('col-md-2 form-control-label')->for('diseases') }}
+                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.disease'))->class('col-md-2 form-control-label')->for('disease') }}
 
                                             <div class="col-md-10">
-                                                {{ html()->multiselect('diseases', $diseases)
+                                                {{ html()->multiselect('disease')
                                     ->class('form-control')
+                                    ->placeholder(__('validation.attributes.backend.access.prescriptions.disease'))
                                     ->attribute('maxlength', 191) }}
                                             </div><!--col-->
                                         </div><!--form-group-->
 
                                         <div class="form-group row">
-                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.files'))->class('col-md-2 form-control-label')->for('images') }}
+                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.files'))->class('col-md-2 form-control-label')->for('files') }}
 
                                             <div class="col-md-10">
-                                                {{ html()->file('images')
+                                                {{ html()->file('files')
                                     ->class('form-control')
                                     ->multiple()
                                     ->attribute('maxlength', 191) }}
@@ -100,16 +87,14 @@
                                         </div><!--form-group-->
 
                                         <div class="form-group row">
-                                            <div class="col-md-12">
                                             <div class="gallery"></div>
-                                            </div><!--col-->
                                         </div><!--form-group-->
 
                                         <div class="form-group row">
-                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.name'))->class('col-md-2 form-control-label')->for('hospital_id') }}
+                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.name'))->class('col-md-2 form-control-label')->for('name') }}
 
                                             <div class="col-md-10">
-                                                {{ html()->select('hospital_id', $hospitals)
+                                                {{ html()->text('name')
                                     ->class('form-control')
                                     ->placeholder(__('validation.attributes.backend.access.prescriptions.name'))
                                     ->attribute('maxlength', 191) }}
@@ -117,11 +102,11 @@
                                         </div><!--form-group-->
 
                                         <div class="form-group row">
-                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.choice'))->class('col-md-2 form-control-label')->for('is_active') }}
+                                            {{ html()->label(__('validation.attributes.backend.access.prescriptions.choice'))->class('col-md-2 form-control-label')->for('choice') }}
 
                                             <div class="col-md-10">
                                                 <label class="switch switch-3d switch-primary">
-                                                    {{ html()->checkbox('is_active', true, '1')->class('switch-input') }}
+                                                    {{ html()->checkbox('choice', true, '1')->class('switch-input') }}
                                                     <span class="switch-label"></span>
                                                     <span class="switch-handle"></span>
                                                 </label>
@@ -137,7 +122,7 @@
                             <div class="card-footer clearfix">
                                 <div class="row">
                                     <div class="col">
-                                        {{ form_cancel(url('/dashboard'), __('buttons.general.cancel')) }}
+                                        {{ form_cancel(route('admin.hospital.index'), __('buttons.general.cancel')) }}
                                     </div><!--col-->
 
                                     <div class="col text-right">
@@ -162,6 +147,7 @@
 
 @push('after-scripts')
 <script>
+    console.log("dasdads")
     $(function () {
         // Multiple images preview in browser
         var imagesPreview = function (input, placeToInsertImagePreview) {
@@ -173,7 +159,7 @@
                     var reader = new FileReader();
 
                     reader.onload = function (event) {
-                        $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview).attr('style', 'max-width:500px!important;max-height:500px!important;margin-top:10px!important');
+                        $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
                     }
 
                     reader.readAsDataURL(input.files[i]);
@@ -182,14 +168,9 @@
 
         };
 
-        $('#images').on('change', function () {
+        $('#files').on('change', function () {
             imagesPreview(this, 'div.gallery');
         });
     });
-    
-    $(document).ready(function() {
-    $('select').select2({tags: true});
-});
-    
     </script>
     @endpush

@@ -54,6 +54,12 @@
                     color: rgb(32, 127, 249);
                     font-weight: bold;
                 }
+                .app-header.navbar .navbar-brand {
+                    background-image: none;
+                }
+                .main .container-fluid {
+                    padding: 30px;
+                }
             </style>
             @stack('after-styles')
         </head>

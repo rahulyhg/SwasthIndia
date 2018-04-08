@@ -15,7 +15,7 @@ class AddForeignKeysToPrescriptionsTable extends Migration {
 		Schema::table('prescriptions', function(Blueprint $table)
 		{
 			$table->foreign('doctor_id', 'fk_doctors_prescription')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
-			$table->foreign('patient_id', 'fk_patient_prescriptions')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
+//			$table->foreign('patient_id', 'fk_patient_prescriptions')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('treatment_id', 'fk_treatment_prescription')->references('id')->on('treatments')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}

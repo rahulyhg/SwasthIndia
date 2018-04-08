@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Requests\Backend\A;
+namespace App\Http\Requests\Frontend\TestRecord;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class UpdateUserRequest.
+ * Class StoreUserRequest.
  */
-class UpdateDiseaseRequest extends FormRequest
+class StoreTestRecordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,7 +17,7 @@ class UpdateDiseaseRequest extends FormRequest
      */
     public function authorize()
     {
-        return $this->user()->isAdmin();
+        return true;
     }
 
     /**
@@ -27,8 +28,10 @@ class UpdateDiseaseRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:191',
-            'type'  => 'required'
+             'test_id'     => 'required|max:191',
+            'prescription_id'  => 'nullable|integer',
+            'test_records_files'  => 'required',
+            'description'  => 'required'
         ];
     }
 }

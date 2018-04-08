@@ -97,9 +97,9 @@
                                     </div><!--card-header-->
 
                                     <div class="card-body">
-                                        <button class="btn btn-info">
-                                            <i class="fa fa-plus-circle"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.view_patient')}}</button>
-                                        <button class="btn btn-warning"  data-toggle="modal" data-target="#add_patient">
+                                        <a href="{{route('frontend.patient.list')}}" class="btn btn-warning">
+                                            <i class="fa fa-plus-circle"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.view_patient')}}</a>
+                                        <button class="btn btn-info"  data-toggle="modal" data-target="#add_patient">
                                             <i class="fa fa-stethoscope"></i>&nbsp;&nbsp;
                                             {{__('labels.frontend.dashboard.add_patient')}}
                                         </button>
@@ -118,6 +118,20 @@
 
                                     <div class="card-body">
                                         <a class="btn btn-info" href="{{ url("/user-prescription") }}"><i class="fa fa-stethoscope"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.add_prescription')}}</a>
+                                    </div><!--card-body-->
+                                </div><!--card-->
+                            </div><!--col-md-6-->
+                        </div><!--row-->
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        Lab Test Report
+                                    </div><!--card-header-->
+
+                                    <div class="card-body">
+                                        <a class="btn btn-info" href="{{ route("frontend.user.test_record.create") }}"><i class="fa fa-stethoscope"></i>&nbsp;&nbsp;Add Test Report</a>
+                                        <a class="btn btn-info" href="{{ route("frontend.user.test_record") }}"><i class="fa fa-flask"></i>&nbsp;&nbsp;View Test Report</a>
                                     </div><!--card-body-->
                                 </div><!--card-->
                             </div><!--col-md-6-->
@@ -154,7 +168,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <p>We will add this functionality in later mode.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

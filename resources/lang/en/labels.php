@@ -82,6 +82,18 @@ return [
                 'edit' => 'Edit Prescription',
                 'create' => 'Create Prescription',
             ],
+            'test' => [
+                'management' => 'Lab Test Management',
+                'edit' => 'Edit Lab Test',
+                'create' => 'Add New Lab Test',
+                'name' => 'Add New Lab Test',
+            ],
+            'test_record' => [
+                'management' => 'Lab Test Management',
+                'edit' => 'Edit Lab Test',
+                'create' => 'Add New Lab Test',
+                'name' => 'Add New Lab Test',
+            ],
             'users' => [
                 'active' => 'Active Users',
                 'all_permissions' => 'All Permissions',
@@ -175,6 +187,7 @@ return [
             'allergies'   => 'Allergies',
             'prescription'  => 'Prescription Details',
             'healthy_india' => 'Healthy India',
+            'patient'       => 'Patient',
             'add_patient'   => 'Add Patient',
             'view_patient'  => 'View Patient List',
             'add_blood_group'  => 'Add Blood Group',
