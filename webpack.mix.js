@@ -11,14 +11,23 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/assets/sass/frontend/app.scss', 'public/css/frontend.css')
-    .sass('resources/assets/sass/backend/app.scss', 'public/css/backend.css')
-    .js('resources/assets/js/frontend/app.js', 'public/js/frontend.js')
+mix.sass('resources/assets/sass/backend/app.scss', 'public/css/backend.css')
+    .css([
+        'public/assets/css/core-styles.css',
+        'public/css/styles.css',
+        'public/assets/css/responsive.css'
+    ], 'public/css/frontend.css')
+    .js([
+        'resources/assets/js/frontend/app.js',
+        'resources/assets/js/frontend/plugins.js',
+        'resources/assets/js/frontend/active.js'
+    ], 'public/js/frontend.js')
     .js([
         'resources/assets/js/backend/before.js',
         'resources/assets/js/backend/app.js',
         'resources/assets/js/backend/after.js'
-    ], 'public/js/backend.js');
+    ], 'public/js/backend.js')
+    .minify('public/css/frontend.css');
 
 if (mix.inProduction() || process.env.npm_lifecycle_event !== 'hot') {
     mix.version();

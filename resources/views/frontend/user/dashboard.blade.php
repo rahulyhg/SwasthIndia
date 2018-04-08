@@ -51,12 +51,6 @@
                             </div>
                         </div>
 
-                        <div class="card mb-4">
-                            <div class="card-header">Notifications</div>
-                            <div class="card-body">
-                                <p class="card-text">No notifications found.</p>
-                            </div>
-                        </div><!--card-->
                     </div><!--col-md-4-->
 
                     <div class="col-md-8 order-2 order-sm-1">
@@ -64,61 +58,83 @@
                             <div class="col">
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        Blood Group
+                                        {{__('labels.frontend.dashboard.blood_group')}}
                                     </div><!--card-header-->
 
                                     <div class="card-body">
-                                        <a class="btn btn-danger" href=""><i class="fa fa-plus"></i>&nbsp;&nbsp;Add Blood Group</a>
+                                        @if ($logged_in_user->blood_group)
+                                        {{$logged_in_user->blood_group}}
+                                        @else 
+                                        <button class="btn btn-info"   data-toggle="modal" data-target="#add_blood_group"><i class="fa fa-plus"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.add_blood_group')}}</button>
+                                        @endif
                                     </div><!--card-body-->
                                 </div><!--card-->
                             </div><!--col-md-6-->
                         </div><!--row-->
-
                         <div class="row">
                             <div class="col">
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        Prescription Details
+                                        {{__('labels.frontend.dashboard.allergies')}}
                                     </div><!--card-header-->
 
                                     <div class="card-body">
-                                        <a class="btn btn-danger" href="{{ url("/user-prescription") }}"><i class="fa fa-stethoscope"></i>&nbsp;&nbsp;Add Prescription</a>
+                                        @if ($logged_in_user->allergies)
+                                        {{$logged_in_user->allergies}}
+                                        @else 
+                                        <button class="btn btn-info"   data-toggle="modal" data-target="#add_allergies"><i class="fa fa-plus"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.add_allergies')}}</button>
+                                        @endif
                                     </div><!--card-body-->
                                 </div><!--card-->
                             </div><!--col-md-6-->
                         </div><!--row-->
-
+                        @if ($logged_in_user->isDoctor())
                         <div class="row">
                             <div class="col">
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        Healthy India
+                                        {{__('labels.frontend.dashboard.patient')}}
                                     </div><!--card-header-->
 
-                                    <div class="card-body display-4">
-                                        <blockquote class="blockquote">
-                                            <em>Healthy india(i.e, Swasth India) is an effort for storing the complete information of a patient's medical background
-                                                ,doctor's information and hospital's information.</em>
-
-                                            <br><br>Some of the features of this application are mentioned below
-                                            <ul class="list-unstyled">
-                                            <ul>     
-                                            <li>Complete health record (User)</li>
-                                            <li>Get patient record (Doctor)</li>
-                                            <li>Hide diseases (User)</li>
-                                            <li>Become a doctor</li>
-                                            <li>Aadhar card based authentication</li>
-                                            <li>Instant Consultation on any issues from doctor</li>
-                                            <li>Find the best doctor in your nearest area or desired area</li>
-                                            <li>Check doctor’s availability and book the appointment</li>
-                                            <li>Get mail/SMS notification alert if added by doctor or user itself</li>
-                                            </ul>
-                                        </blockquote>
+                                    <div class="card-body">
+                                        <button class="btn btn-info">
+                                            <i class="fa fa-plus-circle"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.view_patient')}}</button>
+                                        <button class="btn btn-warning"  data-toggle="modal" data-target="#add_patient">
+                                            <i class="fa fa-stethoscope"></i>&nbsp;&nbsp;
+                                            {{__('labels.frontend.dashboard.add_patient')}}
+                                        </button>
                                     </div><!--card-body-->
                                 </div><!--card-->
                             </div><!--col-md-6-->
-
                         </div><!--row-->
+                        @endif
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        {{__('labels.frontend.dashboard.prescription')}}
+                                    </div><!--card-header-->
+
+                                    <div class="card-body">
+                                        <a class="btn btn-info" href="{{ url("/user-prescription") }}"><i class="fa fa-stethoscope"></i>&nbsp;&nbsp;{{__('labels.frontend.dashboard.add_prescription')}}</a>
+                                    </div><!--card-body-->
+                                </div><!--card-->
+                            </div><!--col-md-6-->
+                        </div><!--row-->
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                                {{__('labels.frontend.dashboard.notification')}}</div>
+                                    <div class="card-body">
+                                        <p class="card-text">No notifications found.</p>
+                                    </div>
+                                </div><!--card-->
+                            </div>
+                        </div>
+
 
                     </div><!--col-md-8-->
                 </div><!-- row -->
@@ -126,4 +142,105 @@
         </div><!-- card -->
     </div><!-- row -->
 </div><!-- row -->
+
+<!-- Modal -->
+<div id="add_patient" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Patient</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Modal -->
+<div id="add_blood_group" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{__('labels.frontend.dashboard.add_blood_group')}}</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        {{ html()->modelForm($logged_in_user, 'PATCH', route('frontend.user.blood-group.update'))->class('form-horizontal')->open() }}
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        {{ html()->label(__('validation.attributes.frontend.blood_group'))->for('blood_group') }}
+
+                        {{ html()->text('blood_group')
+                            ->class('form-control')
+                            ->placeholder(__('validation.attributes.frontend.blood_group'))
+                            ->attribute('maxlength', 12)
+                            ->required() }}
+                    </div><!--form-group-->
+                </div><!--col-->
+            </div><!--row-->
+            <div class="row">
+                <div class="col">
+                    <div class="form-group mb-0 clearfix">
+                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        {{ form_submit(__('labels.general.buttons.update')) }}
+                    </div><!--form-group-->
+                </div><!--col-->
+            </div><!--row-->
+        {{ html()->closeModelForm() }}
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Modal -->
+<div id="add_allergies" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{__('labels.frontend.dashboard.add_allergies')}}</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        {{ html()->modelForm($logged_in_user, 'PATCH', route('frontend.user.allergy.update'))->class('form-horizontal')->open() }}
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        {{ html()->label(__('validation.attributes.frontend.allergies'))->for('allergies') }}
+
+                        {{ html()->text('allergies')
+                            ->class('form-control')
+                            ->placeholder(__('validation.attributes.frontend.allergies'))
+                            ->attribute('maxlength', 256)
+                            ->required() }}
+                    </div><!--form-group-->
+                </div><!--col-->
+            </div><!--row-->
+            <div class="row">
+                <div class="col">
+                    <div class="form-group mb-0 clearfix">
+                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        {{ form_submit(__('labels.general.buttons.update')) }}
+                    </div><!--form-group-->
+                </div><!--col-->
+            </div><!--row-->
+        {{ html()->closeModelForm() }}
+      </div>
+    </div>
+
+  </div>
+</div>
 @endsection
