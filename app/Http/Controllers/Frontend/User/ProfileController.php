@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend\User;
 use App\Http\Controllers\Controller;
 use App\Repositories\Frontend\Auth\UserRepository;
 use App\Http\Requests\Frontend\User\UpdateProfileRequest;
+use App\Http\Requests\Frontend\User\UpdateBloodGroupRequest;
+use App\Http\Requests\Frontend\User\UpdateAllergiesRequest;
 
 /**
  * Class ProfileController.
@@ -47,5 +49,31 @@ class ProfileController extends Controller
         }
 
         return redirect()->route('frontend.user.account')->withFlashSuccess(__('strings.frontend.user.profile_updated'));
+    }
+
+    /**
+     * @param UpdateProfileRequest $request
+     *
+     * @return mixed
+     */
+    public function updateBloodGroup(UpdateBloodGroupRequest $request)
+    {
+        $this->userRepository->updateBloodGroup(
+            $request->user()->id, $request->get('blood_group'));
+
+        return back()->withFlashSuccess(__('strings.frontend.user.blood_group_updated'));
+    }
+
+    /**
+     * @param UpdateProfileRequest $request
+     *
+     * @return mixed
+     */
+    public function updateAllergies(UpdateAllergiesRequest $request)
+    {
+        $this->userRepository->updateAllergies(
+            $request->user()->id, $request->get('allergies'));
+
+        return back()->withFlashSuccess(__('strings.frontend.user.allergy_updated'));
     }
 }

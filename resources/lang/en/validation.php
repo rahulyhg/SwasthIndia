@@ -175,6 +175,8 @@ return [
             'avatar'                    => 'Avatar Location',
             'email'                     => 'E-mail Address',
             'aadhar_no'                 => 'Aadhar Card Number',
+            'blood_group'               => 'Blood Group',
+            'allergies'                 => 'Allergies',
             'first_name'                => 'First Name',
             'last_name'                 => 'Last Name',
             'name'                      => 'Full Name',

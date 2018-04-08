@@ -339,4 +339,18 @@ class UserRepository extends BaseRepository
 
         return $result;
     }
+    
+    public function updateBloodGroup($id, $blood_group)
+    {
+        $user = $this->getById($id);
+        $user->blood_group = $blood_group;
+        return $user->save();
+    }
+    
+    public function updateAllergies($id, $allergies)
+    {
+        $user = $this->getById($id);
+        $user->allergies = $allergies;
+        return $user->save();
+    }
 }

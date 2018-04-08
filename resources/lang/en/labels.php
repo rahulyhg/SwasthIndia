@@ -172,11 +172,13 @@ return [
         'dashboard' => [
             'notification'  => 'Notification',
             'blood_group'   => 'Blood Group',
+            'allergies'   => 'Allergies',
             'prescription'  => 'Prescription Details',
             'healthy_india' => 'Healthy India',
             'add_patient'   => 'Add Patient',
             'view_patient'  => 'View Patient List',
             'add_blood_group'  => 'Add Blood Group',
+            'add_allergies'  => 'Add Allergies',
             'add_prescription'  => 'Add Prescription',
         ],
         'auth' => [
